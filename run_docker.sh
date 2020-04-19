@@ -25,4 +25,4 @@ printf "\n"
 echo "----------------------------------------------------"
 echo "                  Running Image                     "
 echo "----------------------------------------------------"
-docker run -p 80:80 sergiopichardo/project-ml-microservice-kubernetes
+docker run -p 8000:80 sergiopichardo/project-ml-microservice-kubernetes
