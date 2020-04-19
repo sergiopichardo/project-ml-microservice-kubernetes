@@ -1,0 +1,12 @@
+apiVersion: v1  
+kind: Pod  
+metadata: 
+  name: app-pod
+  labels: 
+    component: flask-server
+spec: 
+  containers: 
+    - name: prediction 
+      image: sergiopichardo/project-ml-microservice-kubernetes
+      ports: 
+        - containerPort: 80 

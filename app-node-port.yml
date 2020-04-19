@@ -1,0 +1,12 @@
+apiVersion: v1 
+kind: Service 
+metadata: 
+  name: app-node-port 
+spec: 
+  type: NodePort 
+  ports: 
+    - port: 8000      # Other Pods -> NodePort -> Pod
+      targetPort: 80  # NodePort -> Pod
+      nodePort: 32000 # Outside world -> Pod
+  selector: 
+    component: flask-server
