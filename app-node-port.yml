@@ -5,8 +5,8 @@ metadata:
 spec: 
   type: NodePort 
   ports: 
-    - port: 3050 
-      targetPort: 80
-      nodePort: 31515
+    - port: 8000      # Other Pods -> NodePort -> Pod
+      targetPort: 80  # NodePort -> Pod
+      nodePort: 32000 # Outside world -> Pod
   selector: 
     component: flask-server
