@@ -1,0 +1,15 @@
+version: '3.3'
+
+services:
+  web:
+    image: sergiopicharo/project-ml-microservice-kubernetes
+    ports:
+      - "8000:80"
+    deploy:
+      replicas: 5
+      endpoint_mode: dnsrr
+      resources:
+        limits:
+          memory: 50M
+        reservations:
+          memory: 50M
