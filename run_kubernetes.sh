@@ -4,6 +4,7 @@
 
 # Step 1:
 # This is your Docker ID/path (Docker Hub image)
+docker stack deploy --namespace my-app --compose-file ./docker-compose.yml
 dockerpath=sergiopichardo/project-ml-microservice-kubernetes
 name=project-ml-microservice-kubernetes
 
