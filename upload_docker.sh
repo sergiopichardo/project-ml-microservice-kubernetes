@@ -9,8 +9,8 @@ dockerpath=sergiopichardo/project-ml-microservice-kubernetes
 
 # Step 2:  
 # Authenticate & tag
-echo "Docker ID and Image: $dockerpath"
 docker login
+echo "Docker ID and Image: $dockerpath"
 docker tag project-ml-microservice-kubernetes $dockerpath 
 
 # Step 3:
