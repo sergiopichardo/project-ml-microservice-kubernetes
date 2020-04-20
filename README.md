@@ -58,10 +58,25 @@ NOTE: Sometimes the installation fails due to Docker Hub connectivity issues. If
 $ ./run_docker.sh  # or bash run_docker.sh
 ```
 
+Send prediction request 
+```
+$ ./make_prediction.sh
+```
+
 #### Run in Kubernetes  
 NOTE: During step 2 you have to wait until the Kubernetes deployment is completely done. I added a *timeout* clause at the end of step 2 in the **.run_kubernetes.sh** to wait for 3 seconds, you can change this to add more time if neccessary. 
 ```sh
 $ ./run_kubernetes.sh  # or bash run_kubernetes.sh
+```
+
+Send prediction request 
+```sh
+$ ./make_prediction.sh
+```
+
+Display k8s logs 
+```sh
+$ kubectl logs deployment/project-ml-microservice-kubernetes
 ```
 
 ## 3. Short Explaination of Each File
