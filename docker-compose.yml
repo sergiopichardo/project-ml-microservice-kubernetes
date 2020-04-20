@@ -2,6 +2,6 @@ version: '3.3'
 
 services:
   web:
-    image: sergiopicharo/project-ml-microservice-kubernetes
+    image: sergiopichardo/project-ml-microservice-kubernetes
     ports:
       - "8000:80"
