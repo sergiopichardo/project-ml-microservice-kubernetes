@@ -6,7 +6,7 @@ Port: 8000
   ]
 }
 
-# kubectl logs project-ml-microservice-kubernetes
+# kubectl logs deployment/project-ml-microservice-kubernetes
 * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
