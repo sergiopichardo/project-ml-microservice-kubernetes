@@ -11,7 +11,7 @@ This project tested our ability to operationalize a Python flask app—in a prov
 
 You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing).
 
-## Instructions on How to Run the Scripts
+## 1. Instructions on How to Run the Scripts
 
 ### Create a virtualenv and activate it
 ```sh
@@ -46,7 +46,7 @@ Install *minikube* utility.
 $ brew install minikube 
 ```
 
-### Running the App 
+## 2. Running the App 
 #### Standalone
 ```sh 
 $ python app.py # make sure your virtual environment is running
@@ -64,7 +64,7 @@ NOTE: During step 2 you have to wait until the Kubernetes deployment is complete
 $ ./run_kubernetes.sh  # or bash run_kubernetes.sh
 ```
 
-## Short Explaination of Each File
+## 3. Short Explaination of Each File
 #### circle.ci/config.yml
 Circle CI needs this file to test our source code on their platform. Inside this file are *steps* that tell circleci which steps it needs to follow to test for successfully installing dependencies, or to test for syntax errors with linters.
 
