@@ -1,42 +1,74 @@
+# Operationalize a Machine Learning Microservice API 
 [![CircleCI](https://circleci.com/gh/sergiopichardo/project-ml-microservice-kubernetes/tree/circleci-project-setup.svg?style=svg)](https://circleci.com/gh/sergiopichardo/project-ml-microservice-kubernetes/tree/circleci-project-setup)
 
-## Project Overview
+## Summary of the Project
 
 In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
 
 You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
-### Project Tasks
+## Instructions on How to Run the Scripts
 
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
+### Create a virtualenv and activate it
+```sh
+$ make setup 
+```
+```sh
+$ source venv/bin/activate
+```
 
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
+### Install the necessary dependencies
+Install modules in *requirements.txt* file
+```sh
+$ make install
+```
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+### Running Linters
+Test for errors in Dockerfile and python source code
+```sh
+$ make lint
+```
 
----
+### Docker steps 
+Install docker locally. This will install docker and kubernetes. 
 
-## Setup the Environment
+```sh
+$ brew install docker
+```
 
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+### Setup Kubernetes locally
+Install *minikube* utility. 
+```sh
+$ brew install minikube 
+```
 
-### Running `app.py`
+### Running the App 
+#### Standalone
+```sh 
+$ python app.py # make sure your virtual environment is running
+```
 
-1. Standalone:  `python app.py`
-2. Run in Docker:  `./run_docker.sh`
-3. Run in Kubernetes:  `./run_kubernetes.sh`
+#### Run in Docker  
+NOTE: Sometimes the installation fails due to connectivity issues. If this happens to you please try to running the script again.
+```sh
+$ ./run_docker.sh  # or bash run_docker.sh
+```
 
-### Kubernetes Steps
+#### Run in Kubernetes  
+NOTE: During step 2 you have to wait until the Kubernetes deployment is completely done. I added a *timeout* clause at the end of step 2 to wait for 3 seconds, you can change this to add more time if neccessary.
+```sh
+$ ./run_kubernetes.sh  # or bash run_kubernetes.sh
+```
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+## Short Explaination of Each File
+#### circle.ci/config.yml
+#### app.py 
+#### Dockerfile
+#### Makefile 
+#### requirements.txt 
+#### upload_docker.sh 
+#### run_docker.sh 
+#### run_kubernetes.sh 
+#### make_prediction.sh 
+
+
